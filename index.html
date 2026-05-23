@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZEE-PNG – AI-powered image compressor. Compress JPG, PNG, and WEBP images instantly in your browser without losing quality. Free, fast, and secure." />
+  <meta name="keywords" content="image compressor, PNG compressor, JPG compressor, WEBP compressor, free image compression, online image optimizer, ZEE-PNG" />
+  <meta name="author" content="ZEE-PNG" />
+  <meta property="og:title" content="ZEE-PNG – AI Image Compressor" />
+  <meta property="og:description" content="Compress images instantly without losing quality. 100% browser-based, secure, and free." />
+  <meta property="og:type" content="website" />
+  <title>ZEE-PNG – AI-Powered Image Compressor</title>
+
+  <!-- Favicon (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%236c63ff'/><stop offset='100%25' stop-color='%2300d4ff'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text y='.9em' font-size='65' font-family='Arial Black,sans-serif' font-weight='900' fill='white' x='10'>Z</text></svg>" />
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       ANIMATED BACKGROUND PARTICLES
+  ═══════════════════════════════════════════════ -->
+  <div class="particles-container" id="particles"></div>
+
+  <!-- Glow Orbs -->
+  <div class="glow-orb glow-orb--1"></div>
+  <div class="glow-orb glow-orb--2"></div>
+  <div class="glow-orb glow-orb--3"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-bolt-lightning"></i>
+        </div>
+        <span class="logo-text">ZEE<span class="logo-accent">-PNG</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#tool" class="nav-link">Compress</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <a href="#tool" class="btn btn--primary nav-cta">
+        <i class="fa-solid fa-compress"></i> Start Compressing
+      </a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <!-- Badge -->
+      <div class="hero-badge">
+        <i class="fa-solid fa-sparkles"></i>
+        AI-Powered Compression Engine
+      </div>
+
+      <!-- Heading -->
+      <h1 class="hero-title">
+        Compress Images Instantly
+        <span class="gradient-text">Without Losing Quality</span>
+      </h1>
+
+      <!-- Subheading -->
+      <p class="hero-subtitle">
+        ZEE-PNG uses intelligent browser-side compression powered by the Canvas API — 
+        no uploads, no servers, just blazing-fast results in seconds. 
+        Supports JPG, PNG, and WEBP formats.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-actions">
+        <a href="#tool" class="btn btn--primary btn--lg">
+          <i class="fa-solid fa-upload"></i> Compress Now — It's Free
+        </a>
+        <a href="#features" class="btn btn--ghost btn--lg">
+          <i class="fa-solid fa-circle-play"></i> How It Works
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="trust-badges">
+        <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Secure</span>
+        <span class="trust-badge"><i class="fa-solid fa-lock"></i> No Server Upload</span>
+        <span class="trust-badge"><i class="fa-solid fa-bolt"></i> Instant Results</span>
+        <span class="trust-badge"><i class="fa-solid fa-star"></i> Free Forever</span>
+      </div>
+
+      <!-- Floating Cards -->
+      <div class="floating-card floating-card--left">
+        <i class="fa-solid fa-file-image"></i>
+        <div>
+          <strong>Original</strong>
+          <span>4.2 MB</span>
+        </div>
+      </div>
+      <div class="floating-card floating-card--right">
+        <i class="fa-solid fa-check-circle"></i>
+        <div>
+          <strong>Compressed</strong>
+          <span>820 KB · <em>81% saved</em></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       COMPRESSOR TOOL SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="tool-section" id="tool">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Image Compressor</span>
+        <h2 class="section-title">Start Compressing Your Images</h2>
+        <p class="section-subtitle">Upload your image, adjust quality, and download the compressed version — all within your browser.</p>
+      </div>
+
+      <!-- Dashboard Panel -->
+      <div class="dashboard-panel">
+
+        <!-- UPLOAD AREA -->
+        <div class="upload-zone" id="uploadZone">
+          <div class="upload-zone__inner" id="uploadInner">
+            <div class="upload-icon">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <h3 class="upload-title">Drag & Drop Your Image Here</h3>
+            <p class="upload-subtitle">Supports JPG, PNG, WEBP · Max size: 25 MB</p>
+            <label for="fileInput" class="btn btn--primary upload-btn">
+              <i class="fa-solid fa-folder-open"></i> Browse File
+            </label>
+            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" hidden />
+          </div>
+        </div>
+
+        <!-- COMPRESSION WORKSPACE (hidden until image loaded) -->
+        <div class="workspace" id="workspace" style="display:none;">
+
+          <!-- Controls Bar -->
+          <div class="controls-bar">
+            <button class="btn btn--ghost btn--sm" id="resetBtn">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+            <div class="format-badges" id="formatBadge"></div>
+          </div>
+
+          <!-- Preview Grid -->
+          <div class="preview-grid">
+            <!-- Original -->
+            <div class="preview-card">
+              <div class="preview-card__header">
+                <span class="preview-label preview-label--original">
+                  <i class="fa-solid fa-image"></i> Original
+                </span>
+                <span class="preview-size" id="originalSize">—</span>
+              </div>
+              <div class="preview-card__img-wrap">
+                <img id="originalPreview" src="" alt="Original preview" />
+              </div>
+              <div class="preview-card__footer">
+                <span id="originalDimensions" class="dim-tag"></span>
+              </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="preview-arrow">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </div>
+
+            <!-- Compressed -->
+            <div class="preview-card">
+              <div class="preview-card__header">
+                <span class="preview-label preview-label--compressed">
+                  <i class="fa-solid fa-compress-arrows-alt"></i> Compressed
+                </span>
+                <span class="preview-size" id="compressedSize">—</span>
+              </div>
+              <div class="preview-card__img-wrap">
+                <img id="compressedPreview" src="" alt="Compressed preview" />
+                <div class="preview-placeholder" id="previewPlaceholder">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  <span>Adjust slider & compress</span>
+                </div>
+              </div>
+              <div class="preview-card__footer">
+                <span id="savedBadge" class="saved-badge" style="display:none;"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider & Options -->
+          <div class="options-panel">
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <label for="qualitySlider">
+                  <i class="fa-solid fa-sliders"></i> Compression Quality
+                </label>
+                <span class="slider-value" id="sliderValue">75%</span>
+              </div>
+              <div class="slider-track-wrap">
+                <input type="range" id="qualitySlider" min="5" max="100" value="75" step="1" />
+                <div class="slider-ticks">
+                  <span>Min</span>
+                  <span>Medium</span>
+                  <span>Max</span>
+                </div>
+              </div>
+              <p class="slider-hint">
+                <i class="fa-solid fa-circle-info"></i>
+                Lower quality = smaller file size. 60–80% is ideal for most images.
+              </p>
+            </div>
+
+            <!-- Output Format -->
+            <div class="format-group">
+              <label><i class="fa-solid fa-file-code"></i> Output Format</label>
+              <div class="format-selector">
+                <label class="format-option">
+                  <input type="radio" name="format" value="image/jpeg" checked /> JPG
+                </label>
+                <label class="format-option">
+                  <input type="radio" name="format" value="image/png" /> PNG
+                </label>
+                <label class="format-option">
+                  <input type="radio" name="format" value="image/webp" /> WEBP
+                </label>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="btn btn--primary btn--lg" id="compressBtn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Compress Image</span>
+                <div class="btn-loading" id="btnLoading" style="display:none;">
+                  <i class="fa-solid fa-circle-notch fa-spin"></i>
+                </div>
+              </button>
+              <button class="btn btn--success btn--lg" id="downloadBtn" style="display:none;">
+                <i class="fa-solid fa-download"></i> Download
+              </button>
+            </div>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="stats-row" id="statsRow" style="display:none;">
+            <div class="stat-pill">
+              <i class="fa-solid fa-file"></i>
+              <div>
+                <strong id="st-original">—</strong>
+                <span>Original Size</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-file-zipper"></i>
+              <div>
+                <strong id="st-compressed">—</strong>
+                <span>Compressed Size</span>
+              </div>
+            </div>
+            <div class="stat-pill stat-pill--highlight">
+              <i class="fa-solid fa-chart-line"></i>
+              <div>
+                <strong id="st-saved">—</strong>
+                <span>Space Saved</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <i class="fa-solid fa-stopwatch"></i>
+              <div>
+                <strong id="st-time">—</strong>
+                <span>Compression Time</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /workspace -->
+      </div><!-- /dashboard-panel -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FEATURES SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Why ZEE-PNG</span>
+        <h2 class="section-title">Built for Speed, Security & Quality</h2>
+        <p class="section-subtitle">Everything you need to compress images like a professional — for free, always.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--purple">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Compress large images in milliseconds using the native browser Canvas API — no waiting, no queues.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--blue">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>100% Secure</h3>
+          <p>Your images never leave your device. All processing happens locally in your browser — complete privacy.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--cyan">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3>No Server Upload</h3>
+          <p>Zero data transfer to external servers. Your sensitive photos and documents stay entirely yours.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--green">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <h3>Mobile Friendly</h3>
+          <p>Fully responsive design that works flawlessly on phones, tablets, and desktops of all screen sizes.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--orange">
+            <i class="fa-solid fa-image"></i>
+          </div>
+          <h3>High Quality Output</h3>
+          <p>Fine-tune the quality slider to find the perfect balance between file size and visual clarity.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--pink">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <h3>Unlimited & Free</h3>
+          <p>No sign-up, no limits, no fees. Compress as many images as you want, whenever you want.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       STATS SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-glass-panel">
+        <div class="stats-item">
+          <div class="stats-num" data-target="300">0</div>
+          <div class="stats-label">ms Avg. Compression Speed</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-item">
+          <div class="stats-num" data-target="3">0</div>
+          <div class="stats-label">Image Formats Supported</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-item">
+          <div class="stats-num" data-target="250000" data-suffix="K+">0</div>
+          <div class="stats-label">Happy Users</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-item">
+          <div class="stats-num" data-target="80" data-suffix="%">0</div>
+          <div class="stats-label">Avg. Size Reduction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════════════ -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-list-ol"></i> Process</span>
+        <h2 class="section-title">How ZEE-PNG Works</h2>
+        <p class="section-subtitle">Three simple steps to perfectly compressed images.</p>
+      </div>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step__num">01</div>
+          <div class="how-step__icon"><i class="fa-solid fa-upload"></i></div>
+          <h3>Upload Your Image</h3>
+          <p>Drag & drop or click to browse. Supports JPG, PNG, and WEBP up to 25 MB.</p>
+        </div>
+        <div class="how-connector"><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="how-step">
+          <div class="how-step__num">02</div>
+          <div class="how-step__icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3>Choose Quality Level</h3>
+          <p>Use the quality slider to control the compression ratio. Preview changes in real time.</p>
+        </div>
+        <div class="how-connector"><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="how-step">
+          <div class="how-step__num">03</div>
+          <div class="how-step__icon"><i class="fa-solid fa-download"></i></div>
+          <h3>Download Result</h3>
+          <p>One click to download your compressed image, saved directly to your device.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FAQ SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about ZEE-PNG.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is ZEE-PNG completely free to use?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! ZEE-PNG is 100% free with no hidden charges, no subscriptions, and no account required. You can compress unlimited images for free, forever.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is my image data safe? Does it get uploaded to a server?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely safe. ZEE-PNG processes all images directly in your browser using the Canvas API. Your images never leave your device — zero server uploads, zero data collection.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What image formats does ZEE-PNG support?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>ZEE-PNG supports JPG (JPEG), PNG, and WEBP formats for both input and output. You can also cross-convert between formats — for example, compress a PNG and download it as a WEBP.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the maximum file size I can compress?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>ZEE-PNG supports files up to 25 MB per image. For very large images, performance depends on your device's browser capabilities and available memory.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How much can I reduce my image file size?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>On average, ZEE-PNG achieves 60–85% file size reduction while maintaining great visual quality. Results vary based on image type and the quality setting you choose. Use the slider to find your perfect balance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Will compression reduce my image quality visibly?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>At 60–80% quality settings, most images show no perceptible quality loss to the human eye. Use the side-by-side preview to compare your original and compressed image before downloading.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I use ZEE-PNG on mobile devices?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! ZEE-PNG is fully responsive and works on all modern smartphones and tablets. Simply open it in your mobile browser — no app installation required.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-glass">
+        <div class="cta-content">
+          <h2>Ready to Compress Your First Image?</h2>
+          <p>Join thousands of users who trust ZEE-PNG every day. No sign-up needed.</p>
+          <a href="#tool" class="btn btn--primary btn--lg">
+            <i class="fa-solid fa-rocket"></i> Get Started Free
+          </a>
+        </div>
+        <div class="cta-visual">
+          <div class="cta-orb"></div>
+          <i class="fa-solid fa-images cta-big-icon"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <span class="logo-text">ZEE<span class="logo-accent">-PNG</span></span>
+          </a>
+          <p class="footer-tagline">AI-powered image compression that respects your privacy and delivers stunning results.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Product Hunt"><i class="fa-brands fa-product-hunt"></i></a>
+          </div>
+        </div>
+
+        <!-- Product -->
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#tool">Image Compressor</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#stats">Statistics</a></li>
+          </ul>
+        </div>
+
+        <!-- Formats -->
+        <div class="footer-col">
+          <h4>Formats</h4>
+          <ul>
+            <li><a href="#tool">JPG Compressor</a></li>
+            <li><a href="#tool">PNG Compressor</a></li>
+            <li><a href="#tool">WEBP Compressor</a></li>
+            <li><a href="#tool">Convert to WEBP</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> ZEE-PNG. All rights reserved. Made with <i class="fa-solid fa-heart" style="color:#ff4d6d;"></i> for the web.</p>
+        <p class="footer-note">No images are ever uploaded to any server. 100% client-side processing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hidden Canvas for Compression -->
+  <canvas id="compressionCanvas" style="display:none;"></canvas>
+
+  <!-- Main JS -->
+  <script src="app.js"></script>
+</body>
+</html>
