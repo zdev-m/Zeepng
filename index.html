@@ -1,620 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZEE-PNG – Developed by ZEE. Compress JPG, PNG, and WEBP images instantly in your browser without losing quality. Free, fast, and secure." />
-  <meta name="keywords" content="image compressor, PNG compressor, JPG compressor, WEBP compressor, free image compression, online image optimizer, ZEE-PNG" />
-  <meta name="author" content="ZEE-PNG" />
-  <meta property="og:title" content="ZEE-PNG – Developed by ZEE" />
-  <meta property="og:description" content="Compress images instantly without losing quality. 100% browser-based, secure, and free." />
-  <meta property="og:type" content="website" />
-  <title>ZEE-PNG – Image Compressor</title>
-
-  <!-- Favicon (inline SVG as data URI) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%236c63ff'/><stop offset='100%25' stop-color='%2300d4ff'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text y='.9em' font-size='65' font-family='Arial Black,sans-serif' font-weight='900' fill='white' x='10'>Z</text></svg>" />
-
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8">
+    <title></title>
 </head>
 <body>
-
-  <!-- ═══════════════════════════════════════════════
-       ANIMATED BACKGROUND PARTICLES
-  ═══════════════════════════════════════════════ -->
-  <div class="particles-container" id="particles"></div>
-
-  <!-- Glow Orbs -->
-  <div class="glow-orb glow-orb--1"></div>
-  <div class="glow-orb glow-orb--2"></div>
-  <div class="glow-orb glow-orb--3"></div>
-
-  <!-- ═══════════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════════ -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <!-- Logo -->
-      <a href="#" class="logo">
-        <div class="logo-icon">
-          <i class="fa-solid fa-bolt-lightning"></i>
-        </div>
-        <span class="logo-text">ZEE<span class="logo-accent">-PNG</span></span>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#tool" class="nav-link">Compress</a></li>
-        <li><a href="#features" class="nav-link">Features</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-      </ul>
-
-      <!-- CTA Button -->
-      <a href="#tool" class="btn btn--primary nav-cta">
-        <i class="fa-solid fa-compress"></i> Start Compressing
-      </a>
-
-      <!-- Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ═══════════════════════════════════════════════
-       HERO SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="hero" id="hero">
-    <div class="container hero-inner">
-      <!-- Badge -->
-      <div class="hero-badge">
-        <i class="fa-solid fa-sparkles"></i>
-        Developed by ZEE
-      </div>
-
-      <!-- Heading -->
-      <h1 class="hero-title">
-        Compress Images Instantly
-        <span class="gradient-text">Without Losing Quality</span>
-      </h1>
-
-      <!-- Subheading -->
-      <p class="hero-subtitle">
-        ZEE-PNG uses intelligent browser-side compression powered by the Canvas API — 
-        no uploads, no servers, just blazing-fast results in seconds. 
-        Supports JPG, PNG, and WEBP formats.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="hero-actions">
-        <a href="#tool" class="btn btn--primary btn--lg">
-          <i class="fa-solid fa-upload"></i> Compress Now — It's Free
-        </a>
-        <a href="#features" class="btn btn--ghost btn--lg">
-          <i class="fa-solid fa-circle-play"></i> How It Works
-        </a>
-      </div>
-
-      <!-- Trust Badges -->
-      <div class="trust-badges">
-        <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Secure</span>
-        <span class="trust-badge"><i class="fa-solid fa-lock"></i> No Server Upload</span>
-        <span class="trust-badge"><i class="fa-solid fa-bolt"></i> Instant Results</span>
-        <span class="trust-badge"><i class="fa-solid fa-star"></i> Free Forever</span>
-      </div>
-
-      <!-- Floating Cards -->
-      <div class="floating-card floating-card--left">
-        <i class="fa-solid fa-file-image"></i>
-        <div>
-          <strong>Original</strong>
-          <span>4.2 MB</span>
-        </div>
-      </div>
-      <div class="floating-card floating-card--right">
-        <i class="fa-solid fa-check-circle"></i>
-        <div>
-          <strong>Compressed</strong>
-          <span>820 KB · <em>81% saved</em></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-dot"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       COMPRESSOR TOOL SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="tool-section" id="tool">
-    <div class="container">
-      <!-- Section Header -->
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Image Compressor</span>
-        <h2 class="section-title">Start Compressing Your Images</h2>
-        <p class="section-subtitle">Upload your image, adjust quality, and download the compressed version — all within your browser.</p>
-      </div>
-
-      <!-- Dashboard Panel -->
-      <div class="dashboard-panel">
-
-        <!-- UPLOAD AREA -->
-        <div class="upload-zone" id="uploadZone">
-          <div class="upload-zone__inner" id="uploadInner">
-            <div class="upload-icon">
-              <i class="fa-solid fa-cloud-arrow-up"></i>
-            </div>
-            <h3 class="upload-title">Drag & Drop Your Image Here</h3>
-            <p class="upload-subtitle">Supports JPG, PNG, WEBP · Max size: 25 MB</p>
-            <label for="fileInput" class="btn btn--primary upload-btn">
-              <i class="fa-solid fa-folder-open"></i> Browse File
-            </label>
-            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" hidden />
-          </div>
-        </div>
-
-        <!-- COMPRESSION WORKSPACE (hidden until image loaded) -->
-        <div class="workspace" id="workspace" style="display:none;">
-
-          <!-- Controls Bar -->
-          <div class="controls-bar">
-            <button class="btn btn--ghost btn--sm" id="resetBtn">
-              <i class="fa-solid fa-rotate-left"></i> Reset
-            </button>
-            <div class="format-badges" id="formatBadge"></div>
-          </div>
-
-          <!-- Preview Grid -->
-          <div class="preview-grid">
-            <!-- Original -->
-            <div class="preview-card">
-              <div class="preview-card__header">
-                <span class="preview-label preview-label--original">
-                  <i class="fa-solid fa-image"></i> Original
-                </span>
-                <span class="preview-size" id="originalSize">—</span>
-              </div>
-              <div class="preview-card__img-wrap">
-                <img id="originalPreview" src="" alt="Original preview" />
-              </div>
-              <div class="preview-card__footer">
-                <span id="originalDimensions" class="dim-tag"></span>
-              </div>
-            </div>
-
-            <!-- Arrow -->
-            <div class="preview-arrow">
-              <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            </div>
-
-            <!-- Compressed -->
-            <div class="preview-card">
-              <div class="preview-card__header">
-                <span class="preview-label preview-label--compressed">
-                  <i class="fa-solid fa-compress-arrows-alt"></i> Compressed
-                </span>
-                <span class="preview-size" id="compressedSize">—</span>
-              </div>
-              <div class="preview-card__img-wrap">
-                <img id="compressedPreview" src="" alt="Compressed preview" />
-                <div class="preview-placeholder" id="previewPlaceholder">
-                  <i class="fa-solid fa-wand-magic-sparkles"></i>
-                  <span>Adjust slider & compress</span>
-                </div>
-              </div>
-              <div class="preview-card__footer">
-                <span id="savedBadge" class="saved-badge" style="display:none;"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slider & Options -->
-          <div class="options-panel">
-            <div class="slider-group">
-              <div class="slider-label-row">
-                <label for="qualitySlider">
-                  <i class="fa-solid fa-sliders"></i> Compression Quality
-                </label>
-                <span class="slider-value" id="sliderValue">75%</span>
-              </div>
-              <div class="slider-track-wrap">
-                <input type="range" id="qualitySlider" min="5" max="100" value="75" step="1" />
-                <div class="slider-ticks">
-                  <span>Min</span>
-                  <span>Medium</span>
-                  <span>Max</span>
-                </div>
-              </div>
-              <p class="slider-hint">
-                <i class="fa-solid fa-circle-info"></i>
-                Lower quality = smaller file size. 60–80% is ideal for most images.
-              </p>
-            </div>
-
-            <!-- Output Format -->
-            <div class="format-group">
-              <label><i class="fa-solid fa-file-code"></i> Output Format</label>
-              <div class="format-selector">
-                <label class="format-option">
-                  <input type="radio" name="format" value="image/jpeg" checked /> JPG
-                </label>
-                <label class="format-option">
-                  <input type="radio" name="format" value="image/png" /> PNG
-                </label>
-                <label class="format-option">
-                  <input type="radio" name="format" value="image/webp" /> WEBP
-                </label>
-              </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="action-buttons">
-              <button class="btn btn--primary btn--lg" id="compressBtn">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>Compress Image</span>
-                <div class="btn-loading" id="btnLoading" style="display:none;">
-                  <i class="fa-solid fa-circle-notch fa-spin"></i>
-                </div>
-              </button>
-              <button class="btn btn--success btn--lg" id="downloadBtn" style="display:none;">
-                <i class="fa-solid fa-download"></i> Download
-              </button>
-            </div>
-          </div>
-
-          <!-- Stats Row -->
-          <div class="stats-row" id="statsRow" style="display:none;">
-            <div class="stat-pill">
-              <i class="fa-solid fa-file"></i>
-              <div>
-                <strong id="st-original">—</strong>
-                <span>Original Size</span>
-              </div>
-            </div>
-            <div class="stat-pill">
-              <i class="fa-solid fa-file-zipper"></i>
-              <div>
-                <strong id="st-compressed">—</strong>
-                <span>Compressed Size</span>
-              </div>
-            </div>
-            <div class="stat-pill stat-pill--highlight">
-              <i class="fa-solid fa-chart-line"></i>
-              <div>
-                <strong id="st-saved">—</strong>
-                <span>Space Saved</span>
-              </div>
-            </div>
-            <div class="stat-pill">
-              <i class="fa-solid fa-stopwatch"></i>
-              <div>
-                <strong id="st-time">—</strong>
-                <span>Compression Time</span>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /workspace -->
-      </div><!-- /dashboard-panel -->
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       FEATURES SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-star"></i> Why ZEE-PNG</span>
-        <h2 class="section-title">Built for Speed, Security & Quality</h2>
-        <p class="section-subtitle">Everything you need to compress images like a professional — for free, always.</p>
-      </div>
-
-      <div class="features-grid">
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon--purple">
-            <i class="fa-solid fa-bolt-lightning"></i>
-          </div>
-          <h3>Lightning Fast</h3>
-          <p>Compress large images in milliseconds using the native browser Canvas API — no waiting, no queues.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon--blue">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h3>100% Secure</h3>
-          <p>Your images never leave your device. All processing happens locally in your browser — complete privacy.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon--cyan">
-            <i class="fa-solid fa-server"></i>
-          </div>
-          <h3>No Server Upload</h3>
-          <p>Zero data transfer to external servers. Your sensitive photos and documents stay entirely yours.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon--green">
-            <i class="fa-solid fa-mobile-screen"></i>
-          </div>
-          <h3>Mobile Friendly</h3>
-          <p>Fully responsive design that works flawlessly on phones, tablets, and desktops of all screen sizes.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon--orange">
-            <i class="fa-solid fa-image"></i>
-          </div>
-          <h3>High Quality Output</h3>
-          <p>Fine-tune the quality slider to find the perfect balance between file size and visual clarity.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon--pink">
-            <i class="fa-solid fa-infinity"></i>
-          </div>
-          <h3>Unlimited & Free</h3>
-          <p>No sign-up, no limits, no fees. Compress as many images as you want, whenever you want.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       STATS SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="stats-section" id="stats">
-    <div class="container">
-      <div class="stats-glass-panel">
-        <div class="stats-item">
-          <div class="stats-num" data-target="300">0</div>
-          <div class="stats-label">ms Avg. Compression Speed</div>
-        </div>
-        <div class="stats-divider"></div>
-        <div class="stats-item">
-          <div class="stats-num" data-target="3">0</div>
-          <div class="stats-label">Image Formats Supported</div>
-        </div>
-        <div class="stats-divider"></div>
-        <div class="stats-item">
-          <div class="stats-num" data-target="250000" data-suffix="K+">0</div>
-          <div class="stats-label">Happy Users</div>
-        </div>
-        <div class="stats-divider"></div>
-        <div class="stats-item">
-          <div class="stats-num" data-target="80" data-suffix="%">0</div>
-          <div class="stats-label">Avg. Size Reduction</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       HOW IT WORKS
-  ═══════════════════════════════════════════════ -->
-  <section class="how-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-list-ol"></i> Process</span>
-        <h2 class="section-title">How ZEE-PNG Works</h2>
-        <p class="section-subtitle">Three simple steps to perfectly compressed images.</p>
-      </div>
-
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="how-step__num">01</div>
-          <div class="how-step__icon"><i class="fa-solid fa-upload"></i></div>
-          <h3>Upload Your Image</h3>
-          <p>Drag & drop or click to browse. Supports JPG, PNG, and WEBP up to 25 MB.</p>
-        </div>
-        <div class="how-connector"><i class="fa-solid fa-chevron-right"></i></div>
-        <div class="how-step">
-          <div class="how-step__num">02</div>
-          <div class="how-step__icon"><i class="fa-solid fa-sliders"></i></div>
-          <h3>Choose Quality Level</h3>
-          <p>Use the quality slider to control the compression ratio. Preview changes in real time.</p>
-        </div>
-        <div class="how-connector"><i class="fa-solid fa-chevron-right"></i></div>
-        <div class="how-step">
-          <div class="how-step__num">03</div>
-          <div class="how-step__icon"><i class="fa-solid fa-download"></i></div>
-          <h3>Download Result</h3>
-          <p>One click to download your compressed image, saved directly to your device.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       FAQ SECTION
-  ═══════════════════════════════════════════════ -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> FAQ</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Everything you need to know about ZEE-PNG.</p>
-      </div>
-
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Is ZEE-PNG completely free to use?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Yes! ZEE-PNG is 100% free with no hidden charges, no subscriptions, and no account required. You can compress unlimited images for free, forever.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Is my image data safe? Does it get uploaded to a server?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely safe. ZEE-PNG processes all images directly in your browser using the Canvas API. Your images never leave your device — zero server uploads, zero data collection.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What image formats does ZEE-PNG support?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>ZEE-PNG supports JPG (JPEG), PNG, and WEBP formats for both input and output. You can also cross-convert between formats — for example, compress a PNG and download it as a WEBP.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What is the maximum file size I can compress?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>ZEE-PNG supports files up to 25 MB per image. For very large images, performance depends on your device's browser capabilities and available memory.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How much can I reduce my image file size?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>On average, ZEE-PNG achieves 60–85% file size reduction while maintaining great visual quality. Results vary based on image type and the quality setting you choose. Use the slider to find your perfect balance.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Will compression reduce my image quality visibly?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>At 60–80% quality settings, most images show no perceptible quality loss to the human eye. Use the side-by-side preview to compare your original and compressed image before downloading.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Can I use ZEE-PNG on mobile devices?</span>
-            <i class="fa-solid fa-plus faq-icon"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Yes! ZEE-PNG is fully responsive and works on all modern smartphones and tablets. Simply open it in your mobile browser — no app installation required.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       CTA BANNER
-  ═══════════════════════════════════════════════ -->
-  <section class="cta-banner">
-    <div class="container">
-      <div class="cta-glass">
-        <div class="cta-content">
-          <h2>Ready to Compress Your First Image?</h2>
-          <p>Join thousands of users who trust ZEE-PNG every day. No sign-up needed.</p>
-          <a href="#tool" class="btn btn--primary btn--lg">
-            <i class="fa-solid fa-rocket"></i> Get Started Free
-          </a>
-        </div>
-        <div class="cta-visual">
-          <div class="cta-orb"></div>
-          <i class="fa-solid fa-images cta-big-icon"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-            <span class="logo-text">ZEE<span class="logo-accent">-PNG</span></span>
-          </a>
-          <p class="footer-tagline">AI-powered image compression that respects your privacy and delivers stunning results.</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="social-link" aria-label="Product Hunt"><i class="fa-brands fa-product-hunt"></i></a>
-          </div>
-        </div>
-
-        <!-- Product -->
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="#tool">Image Compressor</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#stats">Statistics</a></li>
-          </ul>
-        </div>
-
-        <!-- Formats -->
-        <div class="footer-col">
-          <h4>Formats</h4>
-          <ul>
-            <li><a href="#tool">JPG Compressor</a></li>
-            <li><a href="#tool">PNG Compressor</a></li>
-            <li><a href="#tool">WEBP Compressor</a></li>
-            <li><a href="#tool">Convert to WEBP</a></li>
-          </ul>
-        </div>
-
-        <!-- Legal -->
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> ZEE-PNG. All rights reserved. Made with <i class="fa-solid fa-heart" style="color:#ff4d6d;"></i> for the web.</p>
-        <p class="footer-note">No images are ever uploaded to any server. 100% client-side processing.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Hidden Canvas for Compression -->
-  <canvas id="compressionCanvas" style="display:none;"></canvas>
-
-  <!-- Main JS -->
-  <script src="app.js"></script>
+    
 </body>
 </html>
+
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ZEE-PNG – Image Compressor. Free, fast, secure client-side compression." name="description"/>
+<title>ZEE-PNG – Image Compressor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      overflow-x: hidden;
+    }
+    
+    /* Neumorphism */
+    .neu-flat {
+      background: #ffffff;
+      box-shadow: 6px 6px 12px #e6e6e6, -6px -6px 12px #ffffff;
+      border-radius: 16px;
+    }
+    .neu-pressed {
+      background: #ffffff;
+      box-shadow: inset 6px 6px 12px #e6e6e6, inset -6px -6px 12px #ffffff;
+      border-radius: 16px;
+    }
+    .neu-btn {
+      background: #ffffff;
+      box-shadow: 4px 4px 8px #e6e6e6, -4px -4px 8px #ffffff;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+    .neu-btn:hover {
+      box-shadow: 2px 2px 4px #e6e6e6, -2px -2px 4px #ffffff;
+    }
+    .neu-btn:active {
+      box-shadow: inset 4px 4px 8px #e6e6e6, inset -4px -4px 8px #ffffff;
+    }
+    .neu-btn-maroon {
+      background: #800000;
+      color: #ffffff;
+      box-shadow: 4px 4px 8px #e6e6e6, -4px -4px 8px #ffffff;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+    .neu-btn-maroon:hover {
+      background: #6a0000;
+    }
+    
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Drawer */
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      transition: right 0.3s ease-in-out;
+      z-index: 2000;
+      padding: 80px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .drawer.open {
+      right: 0;
+    }
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #e6e6e6;
+      border-radius: 4px;
+      outline: none;
+      box-shadow: inset 2px 2px 4px #d1d1d1, inset -2px -2px 4px #ffffff;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #800000;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px #e6e6e6, -2px -2px 4px #ffffff;
+    }
+
+    /* Custom Radio */
+    .format-option input[type="radio"] {
+      display: none;
+    }
+    .format-option {
+      padding: 10px 24px;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 500;
+      background: #ffffff;
+      box-shadow: 4px 4px 8px #e6e6e6, -4px -4px 8px #ffffff;
+      transition: all 0.2s;
+    }
+    .format-option input[type="radio"]:checked + span {
+      color: #800000;
+    }
+    .format-option:has(input[type="radio"]:checked) {
+      box-shadow: inset 4px 4px 8px #e6e6e6, inset -4px -4px 8px #ffffff;
+    }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+    .revealed { opacity: 1; transform: translateY(0); }
+    
+    .zeepng-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      color: #000;
+      padding: 14px 32px;
+      border-radius: 50px;
+      z-index: 9999;
+      font-weight: 500;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="antialiased">
+<nav class="fixed top-0 left-0 right-0 h-20 z-50 glass transition-all" id="navbar">
+<div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+<a class="text-2xl font-bold tracking-tight" href="#">ZEE<span class="text-[#800000]">-PNG</span></a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-gray-600 hover:text-[#800000] font-medium transition" href="#hero">Home</a>
+<a class="text-gray-600 hover:text-[#800000] font-medium transition" href="#tool">Compress</a>
+<a class="text-gray-600 hover:text-[#800000] font-medium transition" href="#features">Features</a>
+<a class="neu-btn-maroon px-6 py-2.5 font-semibold" href="#tool">Start</a>
+</div>
+<button class="md:hidden text-2xl text-black focus:outline-none" id="hamburger">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+</nav>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer glass shadow-2xl" id="drawer">
+<button class="absolute top-6 right-6 text-2xl text-gray-600 hover:text-black" id="closeDrawer">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<a class="text-xl font-semibold text-gray-800 hover:text-[#800000]" href="#hero">Home</a>
+<a class="text-xl font-semibold text-gray-800 hover:text-[#800000]" href="#tool">Compress</a>
+<a class="text-xl font-semibold text-gray-800 hover:text-[#800000]" href="#features">Features</a>
+<div class="mt-8 pt-8 border-t border-gray-200">
+<h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Privacy Policy</h4>
+<p class="text-sm text-gray-600 leading-relaxed">
+<strong>Our Commitment:</strong> We process images entirely in your browser. No data ever leaves your device. We respect your privacy and follow all security best practices.
+    </p>
+</div>
+</div>
+<section class="min-h-screen pt-32 pb-20 flex items-center relative" id="hero">
+<div class="max-w-4xl mx-auto px-6 text-center reveal">
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-gray-900">
+      Compress Images <span class="text-[#800000]">Securely</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+      Client-side compression in your browser. Fast, private, and maintaining high visual fidelity. Supports JPG, PNG, and WEBP.
+    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="neu-btn-maroon px-8 py-4 text-lg font-semibold w-full sm:w-auto text-center" href="#tool">Compress Now</a>
+<a class="neu-btn px-8 py-4 text-lg font-semibold text-gray-800 w-full sm:w-auto text-center" href="#features">Learn More</a>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50/30" id="tool">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-12 reveal">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Compression Workspace</h2>
+</div>
+<div class="neu-flat p-8 md:p-12 reveal">
+<div class="neu-pressed p-12 text-center cursor-pointer border border-dashed border-gray-300 rounded-2xl transition hover:border-[#800000]" id="uploadZone">
+<i class="fa-solid fa-cloud-arrow-up text-4xl text-[#800000] mb-4"></i>
+<h3 class="text-xl font-semibold mb-2">Drag &amp; Drop Image</h3>
+<p class="text-gray-500 mb-6">JPG, PNG, WEBP (Max 25 MB)</p>
+<label class="neu-btn px-6 py-3 font-semibold text-gray-800 inline-block cursor-pointer" for="fileInput">Browse File</label>
+<input accept="image/jpeg,image/png,image/webp" class="hidden" id="fileInput" type="file"/>
+</div>
+<div class="mt-8" id="workspace" style="display:none;">
+<div class="flex justify-between items-center mb-6">
+<button class="neu-btn px-4 py-2 text-sm font-medium text-gray-600" id="resetBtn">
+<i class="fa-solid fa-rotate-left mr-2"></i>Reset
+          </button>
+<div class="text-xs font-bold text-[#800000] bg-red-50 px-3 py-1 rounded-full border border-red-100" id="formatBadge"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 items-center">
+<div class="neu-flat overflow-hidden">
+<div class="px-4 py-3 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+<span class="font-medium text-gray-700">Original</span>
+<span class="text-sm text-gray-500" id="originalSize">—</span>
+</div>
+<div class="p-4 bg-gray-50 min-h-[200px] flex items-center justify-center">
+<img alt="original" class="max-w-full max-h-[300px] object-contain drop-shadow-md" id="originalPreview" src=""/>
+</div>
+<div class="px-4 py-2 text-xs text-gray-500 text-center bg-gray-50/50" id="originalDimensions"></div>
+</div>
+<div class="flex justify-center text-gray-300">
+<i class="fa-solid fa-arrow-right text-2xl hidden md:block"></i>
+<i class="fa-solid fa-arrow-down text-2xl md:hidden"></i>
+</div>
+<div class="neu-flat overflow-hidden relative">
+<div class="px-4 py-3 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+<span class="font-medium text-gray-700">Compressed</span>
+<span class="text-sm text-gray-500" id="compressedSize">—</span>
+</div>
+<div class="p-4 bg-gray-50 min-h-[200px] flex items-center justify-center relative">
+<img class="max-w-full max-h-[300px] object-contain drop-shadow-md" id="compressedPreview" src=""/>
+<div class="absolute inset-0 flex items-center justify-center text-gray-400 gap-2 bg-gray-50/80 backdrop-blur-sm" id="previewPlaceholder">
+<i class="fa-solid fa-image"></i><span>Preview pending</span>
+</div>
+</div>
+<div class="px-4 py-2 bg-gray-50/50 text-center flex justify-center min-h-[36px]">
+<span class="text-xs font-bold text-green-700 bg-green-100 px-3 py-1 rounded-full hidden" id="savedBadge"></span>
+</div>
+</div>
+</div>
+<div class="neu-flat p-6 mt-8">
+<div class="mb-8">
+<div class="flex justify-between mb-3">
+<label class="font-medium text-gray-700">Quality</label>
+<span class="font-bold text-[#800000]" id="sliderValue">75%</span>
+</div>
+<input id="qualitySlider" max="100" min="5" type="range" value="75"/>
+</div>
+<div class="mb-8">
+<label class="font-medium text-gray-700 block mb-4">Output Format</label>
+<div class="flex flex-wrap gap-4">
+<label class="format-option">
+<input checked="" name="format" type="radio" value="image/jpeg"/>
+<span>JPEG</span>
+</label>
+<label class="format-option">
+<input name="format" type="radio" value="image/png"/>
+<span>PNG</span>
+</label>
+<label class="format-option">
+<input name="format" type="radio" value="image/webp"/>
+<span>WEBP</span>
+</label>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4 border-t border-gray-100">
+<button class="neu-btn-maroon px-8 py-3 font-semibold flex items-center gap-2" id="compressBtn">
+              Compress
+            </button>
+<button class="neu-btn px-8 py-3 font-semibold text-gray-800 flex items-center gap-2 hidden" id="downloadBtn">
+<i class="fa-solid fa-download"></i> Download
+            </button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 hidden" id="statsRow">
+<div class="neu-pressed p-4 flex flex-col items-center justify-center text-center">
+<span class="text-xs text-gray-500 mb-1 uppercase tracking-wider">Original</span>
+<strong class="text-lg text-gray-800" id="st-original">—</strong>
+</div>
+<div class="neu-pressed p-4 flex flex-col items-center justify-center text-center">
+<span class="text-xs text-gray-500 mb-1 uppercase tracking-wider">Compressed</span>
+<strong class="text-lg text-gray-800" id="st-compressed">—</strong>
+</div>
+<div class="neu-pressed p-4 flex flex-col items-center justify-center text-center">
+<span class="text-xs text-gray-500 mb-1 uppercase tracking-wider">Saved</span>
+<strong class="text-lg text-green-600" id="st-saved">—</strong>
+</div>
+<div class="neu-pressed p-4 flex flex-col items-center justify-center text-center">
+<span class="text-xs text-gray-500 mb-1 uppercase tracking-wider">Time</span>
+<strong class="text-lg text-gray-800" id="st-time">—</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20" id="features">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16 reveal">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+<p class="text-gray-600">Professional grade tools right in your browser.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="neu-flat p-8 text-center reveal">
+<div class="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-2xl text-[#800000] mb-6 shadow-inner">
+<i class="fa-solid fa-bolt"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">Instant Processing</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Files are processed locally via Canvas API resulting in zero upload wait times.</p>
+</div>
+<div class="neu-flat p-8 text-center reveal">
+<div class="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-2xl text-[#800000] mb-6 shadow-inner">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">Absolute Privacy</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Your images never leave your device. We don't use servers for compression.</p>
+</div>
+<div class="neu-flat p-8 text-center reveal">
+<div class="w-16 h-16 mx-auto bg-gray-50 rounded-full flex items-center justify-center text-2xl text-[#800000] mb-6 shadow-inner">
+<i class="fa-solid fa-check-double"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-gray-800">Unrestricted Use</h3>
+<p class="text-gray-600 text-sm leading-relaxed">No accounts, no watermarks, no hidden limits. Completely free tool.</p>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-12 border-t border-gray-100 mt-10">
+<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-xl font-bold tracking-tight text-gray-900">ZEE<span class="text-[#800000]">-PNG</span></div>
+<p class="text-sm text-gray-500">© <span id="year"></span> ZEE-PNG. All rights reserved.</p>
+</div>
+</footer>
+<canvas id="compressionCanvas" style="display:none;"></canvas>
+<script>
+  (function(){
+    // state
+    let state = { originalFile: null, originalDataURL: null, originalSize: 0, compressedBlob: null, compressedURL: null, mimeType: 'image/jpeg', quality: 0.75 };
+    
+    // helpers
+    function formatBytes(b){ if(b===0) return '0 B'; const k=1024, sizes=['B','KB','MB']; let i=Math.floor(Math.log(b)/Math.log(k)); return (b/Math.pow(k,i)).toFixed(2)+' '+sizes[i]; }
+    function isValidImageType(t){ return ['image/jpeg','image/png','image/webp'].includes(t); }
+    function getExtension(mime){ let map={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'}; return map[mime]||'jpg'; }
+    function showToast(msg, type='success'){ 
+      let t=document.querySelector('.zeepng-toast'); 
+      if(t) t.remove(); 
+      let d=document.createElement('div'); 
+      d.className='zeepng-toast'; 
+      d.innerHTML= type === 'success' ? `<i class="fa-solid fa-check text-green-600 mr-2"></i> ${msg}` : `<i class="fa-solid fa-circle-exclamation text-[#800000] mr-2"></i> ${msg}`; 
+      document.body.appendChild(d); 
+      setTimeout(()=> { d.style.opacity = '0'; d.style.transition = 'opacity 0.3s'; setTimeout(()=>d.remove(),300); },3000); 
+    }
+    
+    // compression
+    async function compressImage(dataURL, mime, quality){
+      return new Promise((res,rej)=>{
+        let img=new Image();
+        img.onload=()=>{
+          let canvas=document.getElementById('compressionCanvas');
+          canvas.width=img.naturalWidth; canvas.height=img.naturalHeight;
+          let ctx=canvas.getContext('2d');
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          if(mime==='image/jpeg'){ ctx.fillStyle='#fff'; ctx.fillRect(0,0,canvas.width,canvas.height); }
+          ctx.drawImage(img,0,0);
+          canvas.toBlob(blob=>blob?res(blob):rej('toBlob failed'), mime, quality);
+        };
+        img.onerror=()=>rej('image load error');
+        img.src=dataURL;
+      });
+    }
+    
+    // load image
+    function loadImage(file){
+      if(!isValidImageType(file.type)){ showToast('Unsupported format','error'); return; }
+      if(file.size>25*1024*1024){ showToast('Max 25MB','error'); return; }
+      state.originalFile=file; state.originalSize=file.size; state.compressedBlob=null;
+      if(state.compressedURL){ URL.revokeObjectURL(state.compressedURL); state.compressedURL=null; }
+      let formatRadio=document.querySelector(`input[name="format"][value="${file.type}"]`);
+      if(formatRadio) formatRadio.checked=true;
+      else document.querySelector('input[name="format"][value="image/jpeg"]').checked=true;
+      state.mimeType=document.querySelector('input[name="format"]:checked').value;
+      let reader=new FileReader();
+      reader.onload=(e)=>{
+        state.originalDataURL=e.target.result;
+        document.getElementById('originalPreview').src=state.originalDataURL;
+        document.getElementById('originalSize').innerText=formatBytes(state.originalSize);
+        let imgD=new Image(); imgD.onload=()=>{ document.getElementById('originalDimensions').innerText=`${imgD.naturalWidth} × ${imgD.naturalHeight} px`; };
+        imgD.src=state.originalDataURL;
+        let badgeDiv=document.getElementById('formatBadge'); badgeDiv.innerText=file.type.split('/')[1].toUpperCase();
+        document.getElementById('compressedPreview').src='';
+        document.getElementById('compressedSize').innerText='—';
+        document.getElementById('savedBadge').classList.add('hidden');
+        document.getElementById('downloadBtn').classList.add('hidden');
+        document.getElementById('statsRow').classList.add('hidden');
+        document.getElementById('previewPlaceholder').style.display='flex';
+        document.getElementById('uploadZone').style.display='none';
+        document.getElementById('workspace').style.display='block';
+        document.getElementById('tool').scrollIntoView({behavior:'smooth'});
+      };
+      reader.readAsDataURL(file);
+    }
+    
+    function resetSession(){
+      state.originalFile=null; state.originalDataURL=null; state.originalSize=0; state.compressedBlob=null;
+      if(state.compressedURL) URL.revokeObjectURL(state.compressedURL);
+      document.getElementById('uploadZone').style.display='block';
+      document.getElementById('workspace').style.display='none';
+      document.getElementById('fileInput').value='';
+      document.getElementById('qualitySlider').value=75;
+      updateSliderStyle(75);
+    }
+    
+    async function runCompression(){
+      if(!state.originalDataURL){ showToast('Upload an image first','error'); return; }
+      let compressBtn=document.getElementById('compressBtn');
+      let originalText=compressBtn.innerHTML;
+      compressBtn.disabled=true;
+      compressBtn.innerHTML='<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Compressing...';
+      let qualityVal=document.getElementById('qualitySlider').value/100;
+      let mime=document.querySelector('input[name="format"]:checked').value;
+      state.mimeType=mime; state.quality=qualityVal;
+      let start=performance.now();
+      try{
+        let blob=await compressImage(state.originalDataURL, mime, qualityVal);
+        let elapsed=Math.round(performance.now()-start);
+        state.compressedBlob=blob;
+        if(state.compressedURL) URL.revokeObjectURL(state.compressedURL);
+        state.compressedURL=URL.createObjectURL(blob);
+        document.getElementById('compressedPreview').src=state.compressedURL;
+        document.getElementById('previewPlaceholder').style.display='none';
+        let savedPercent=((state.originalSize-blob.size)/state.originalSize*100).toFixed(1);
+        document.getElementById('compressedSize').innerText=formatBytes(blob.size);
+        let badge=document.getElementById('savedBadge');
+        badge.innerHTML=`${savedPercent}% smaller`;
+        badge.classList.remove('hidden');
+        document.getElementById('st-original').innerText=formatBytes(state.originalSize);
+        document.getElementById('st-compressed').innerText=formatBytes(blob.size);
+        document.getElementById('st-saved').innerText=`${savedPercent}%`;
+        document.getElementById('st-time').innerText=`${elapsed} ms`;
+        document.getElementById('statsRow').classList.remove('hidden');
+        document.getElementById('downloadBtn').classList.remove('hidden');
+        showToast(`Saved ${savedPercent}%`,'success');
+      } catch(e){ showToast('Compression failed','error'); console.error(e); }
+      finally{ compressBtn.disabled=false; compressBtn.innerHTML=originalText; }
+    }
+    
+    function updateSliderStyle(val){ 
+      document.getElementById('sliderValue').innerText=val+'%'; 
+    }
+    
+    // init everything
+    function init(){
+      // drawer
+      let hamburger=document.getElementById('hamburger'); 
+      let drawer=document.getElementById('drawer');
+      let drawerOverlay=document.getElementById('drawerOverlay');
+      let closeDrawer=document.getElementById('closeDrawer');
+      
+      const toggleDrawer = () => {
+        drawer.classList.toggle('open');
+        drawerOverlay.classList.toggle('open');
+      };
+
+      if(hamburger) hamburger.addEventListener('click', toggleDrawer);
+      if(closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
+      if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+      
+      // drawer links close drawer
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', toggleDrawer));
+
+      // upload
+      let zone=document.getElementById('uploadZone'); let fileInput=document.getElementById('fileInput');
+      zone.addEventListener('dragover',(e)=>{ e.preventDefault(); zone.classList.add('border-[#800000]'); });
+      zone.addEventListener('dragleave',()=>zone.classList.remove('border-[#800000]'));
+      zone.addEventListener('drop',(e)=>{ e.preventDefault(); zone.classList.remove('border-[#800000]'); let f=e.dataTransfer.files[0]; if(f && isValidImageType(f.type)) loadImage(f); else showToast('Invalid format','error'); });
+      fileInput.addEventListener('change',()=>{ if(fileInput.files[0]) loadImage(fileInput.files[0]); });
+      
+      document.getElementById('resetBtn')?.addEventListener('click',resetSession);
+      document.getElementById('compressBtn')?.addEventListener('click',runCompression);
+      document.getElementById('downloadBtn')?.addEventListener('click',()=>{ if(state.compressedBlob){ let a=document.createElement('a'); let url=URL.createObjectURL(state.compressedBlob); a.href=url; a.download=`compressed_${Date.now()}.${getExtension(state.mimeType)}`; a.click(); URL.revokeObjectURL(url); } });
+      
+      let slider=document.getElementById('qualitySlider');
+      slider.addEventListener('input',(e)=>{ updateSliderStyle(e.target.value); });
+      updateSliderStyle(75);
+      
+      // reveal animation
+      let observer=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('revealed'); observer.unobserve(e.target); } }); },{threshold:0.1});
+      document.querySelectorAll('.reveal').forEach(el=>{ observer.observe(el); });
+      
+      document.getElementById('year').innerText=new Date().getFullYear();
+      
+      // format radio change
+      document.querySelectorAll('input[name="format"]').forEach(r=>r.addEventListener('change',()=>{ if(state.originalDataURL) state.mimeType=r.value; }));
+    }
+    init();
+  })();
+</script>
+</body></html>
